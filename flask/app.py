@@ -7,7 +7,7 @@ from urllib.parse import quote_plus
 from hashlib import sha1
 
 from redis import Redis
-r = Redis(host='localhost', port=6379, db=0)
+r = Redis(host='redis', port=6379, db=0)
 
 def cache_hash(input: str):
     hash = sha1(input.encode("utf-8")).hexdigest()
