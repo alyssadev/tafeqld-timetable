@@ -15,6 +15,6 @@ Usage (before UI is developed)
 ```
 
 * Get your search query from https://timetables.tafeqld.edu.au/Group e.g `ict50220`
-* Navigate to e.g /timetable.ics?region=TQBN&group=ict50220 . If the search term matches more than one course, it will return json indicating this and list the results
-  * Currently, the results are accompanied by a `n` argument, this can be used to limit the results down to that argument. This is a temporary fix for a bug and is already deprecated. However, it's currently critical to functionality. I'm recovering from a cold, sue me.
-* Navigate to e.g /timetable.ics?region=TQBN&group=ict50220&n=10 . This will download the specific timetable required.
+* Navigate to e.g `/search?region=TQBN&group=ict50220`. If the search term matches more than one course, it will return json indicating this and list the results. Otherwise it will redirect to the first result.
+* Results will have a hash property. This can be used in `/<hash>/timetable.ics`. Hashes can be abbreviated.
+  * e.g `/f273d9f/timetable.ics` is shorthand for getting f273d9f94cc26573fea21639fae66ab3f48af1a7/timetable.ics, as long as there is no collision

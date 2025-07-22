@@ -27,3 +27,9 @@ services:
       timeout: 10s
       retries: 3
     command: gunicorn -w 3 -t 60 -b 0.0.0.0:53424 app:app
+  redis:
+    image: redis
+    volumes:
+      - redis:/data
+volumes:
+  redis:
